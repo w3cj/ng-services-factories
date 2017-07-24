@@ -2,12 +2,27 @@
 
   angular
     .module('RecipeApp')
-    .factory('RecipeService', RecipeService);
+    .service('RecipeService', RecipeService);
 
   function RecipeService() {
-    return {
-      message: 'Hello from the Recipe Service'
-    };
+    const favorites = [];
+
+    this.getFavorites = function() {
+      return favorites;
+    }
+
+    this.addFavorite = function(recipe) {
+      favorites.push(recipe);
+    }
+
+    this.removeFavorite = function(recipe) {
+      const index = favorites.indexOf(recipe);
+      favorites.splice(index, 1);
+    }
+
+    this.isFavorite = function(recipe) {
+      return favorites.some(favorite => favorite === recipe);
+    }
   }
 
 })();

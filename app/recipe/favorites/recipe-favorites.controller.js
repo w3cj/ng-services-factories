@@ -7,7 +7,7 @@
   function RecipeFavoritesController(RecipeService) {
     const vm = this;
 
-    vm.service = RecipeService;
+    vm.favorites = RecipeService.getFavorites();
   }
 
 })();

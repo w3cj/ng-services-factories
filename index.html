@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="RecipeApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Demo</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/darkly/bootstrap.css">
+  </head>
+  <body>
+    <header class="page-header container">
+      <h1>Recipe App</h1>
+    </header>
+    <main class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <recipe-list></recipe-list>
+        </div>
+        <div class="col-xs-6">
+          <recipe-favorites></recipe-favorites>
+        </div>
+      </div>
+    </main>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
+    <script src="app/app.module.js" charset="utf-8"></script>
+    <script src="app/recipe/recipe.service.js" charset="utf-8"></script>
+    <script src="app/recipe/list/recipe-list.controller.js" charset="utf-8"></script>
+    <script src="app/recipe/list/recipe-list.component.js" charset="utf-8"></script>
+    <script src="app/recipe/favorites/recipe-favorites.controller.js" charset="utf-8"></script>
+    <script src="app/recipe/favorites/recipe-favorites.component.js" charset="utf-8"></script>
+  </body>
+</html>

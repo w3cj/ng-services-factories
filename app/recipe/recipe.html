@@ -1,0 +1,13 @@
+<div>
+  <h4 class="list-group-item-heading">{{$ctrl.data.title}}</h4>
+  <p class="list-group-item-text">
+    <img ng-src="{{$ctrl.data.thumbnail}}" alt="">
+    {{$ctrl.data.ingredients}}
+  </p>
+  <button ng-hide="$ctrl.isFavorite($ctrl.data)" ng-click="$ctrl.addFavorite($ctrl.data)" type="button" class="btn btn-success">
+    Add Favorite
+  </button>
+  <button ng-show="$ctrl.isFavorite($ctrl.data)" ng-click="$ctrl.removeFavorite($ctrl.data)" type="button" class="btn btn-danger">
+    Remove Favorite
+  </button>
+</div>

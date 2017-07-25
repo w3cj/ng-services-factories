@@ -1,16 +1,10 @@
 <h3>Recipe List</h3>
 <ul class="list-group">
   <li ng-repeat="recipe in $ctrl.recipes" class="list-group-item">
-    <h4 class="list-group-item-heading">{{recipe.title}}</h4>
-    <p class="list-group-item-text">
-      <img ng-src="{{recipe.thumbnail}}" alt="">
-      {{recipe.ingredients}}
-    </p>
-    <button ng-hide="$ctrl.service.isFavorite(recipe)" ng-click="$ctrl.addFavorite(recipe)" type="button" class="btn btn-success">
-      Add Favorite
-    </button>
-    <button ng-show="$ctrl.service.isFavorite(recipe)" ng-click="$ctrl.removeFavorite(recipe)" type="button" class="btn btn-danger">
-      Remove Favorite
-    </button>
+    <recipe
+      data="recipe"
+      on-add-favorite="$ctrl.addFavorite(recipe)"
+      on-remove-favorite="$ctrl.removeFavorite(recipe)"
+      is-favorite="$ctrl.service.isFavorite(recipe)"></recipe>
   </li>
 </ul>

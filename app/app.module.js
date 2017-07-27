@@ -1,6 +1,6 @@
 (function () {
 
   angular
-    .module('RecipeApp', []);
+    .module('RecipeApp', ['ui.router']);
 
 })();

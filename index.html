@@ -4,23 +4,25 @@
     <meta charset="utf-8">
     <title>Angular Demo</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/darkly/bootstrap.css">
+    <base href="/">
   </head>
   <body>
     <header class="page-header container">
       <h1>Recipe App</h1>
+      <button type="button" class="btn btn-success" ui-sref="recipes">
+        All Recipes
+      </button>
+      <button type="button" class="btn btn-warning" ui-sref="favorites">
+        Favorite Recipes
+      </button>
     </header>
     <main class="container">
-      <div class="row">
-        <div class="col-xs-6">
-          <recipe-list></recipe-list>
-        </div>
-        <div class="col-xs-6">
-          <recipe-favorites></recipe-favorites>
-        </div>
-      </div>
+      <ui-view></ui-view>
     </main>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" charset="utf-8"></script>
     <script src="app/app.module.js" charset="utf-8"></script>
+    <script src="app/app.config.js" charset="utf-8"></script>
     <script src="app/recipe/recipe.service.js" charset="utf-8"></script>
     <script src="app/recipe/recipe.controller.js" charset="utf-8"></script>
     <script src="app/recipe/recipe.component.js" charset="utf-8"></script>
